@@ -9,6 +9,13 @@
     "declaration": true,
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
+
+    /* Inversify JS and Node requirements */
+    "lib": ["ES6", "DOM"],
+    "types": ["node", "reflect-metadata"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
     "paths": {
       "@klu-food/shared": ["../../packages/shared/src/index.ts"]
     }
