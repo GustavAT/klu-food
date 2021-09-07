@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import 'process';
-import { iocContainer, TYPES } from "./ioc";
-import { MensaScraper } from "./scraper";
+import { TYPES, iocContainer } from './ioc';
+import { MensaScraper } from './scraper';
 
 console.log('Hello world from node.js');
 
@@ -15,4 +15,3 @@ async function fetchMensa(): Promise<void> {
 }
 
 void fetchMensa();
-

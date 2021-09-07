@@ -3,5 +3,12 @@
   "version": "1.0.0",
   "dependencies": {
     "@klu-food/shared": "1.0.0"
+  },
+  "scripts": {
+    "build": "echo Not available for @klu-food/api",
+    "lint": "echo Not available for @klu-food/api",
+    "prettier": "echo Not available for @klu-food/api",
+    "prettier:fix": "echo Not available for @klu-food/api",
+    "test": "echo No tests configured for @klu-food/api"
   }
 }

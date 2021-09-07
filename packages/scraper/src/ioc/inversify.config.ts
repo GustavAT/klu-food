@@ -1,7 +1,7 @@
 import { Container } from 'inversify';
 import { HttpClient } from '../http-client';
-import { TYPES } from './types';
 import { MensaScraper } from '../scraper';
+import { TYPES } from './types';
 
 const iocContainer = new Container();
 

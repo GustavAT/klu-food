@@ -8,13 +8,14 @@
     "start": "node --experimental-specifier-resolution=node ./dist/index.js",
     "lint": "eslint --config ../../.eslintrc.json ./src/**/*",
     "prettier": "prettier --config ../../.prettierrc --check ./src/**/* ",
-    "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/*"
+    "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/*",
+    "test": "jest --config ./jest.config.json"
   },
   "dependencies": {
     "@klu-food/shared": "1.0.0",
     "inversify": "^5.1.1",
     "reflect-metadata": "^0.1.13",
-    "node-fetch": "^3.0.0"
+    "axios": "^0.21.4"
   },
   "devDependencies": {
     "typescript": "^4.4.2",
@@ -23,9 +24,13 @@
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
     "jest": "^27.1.0",
+    "ts-jest": "^27.0.5",
+    "jest-environment-jsdom": "^27.1.0",
+    "jest-environment-jsdom-sixteen": "^2.0.0",
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.7.10",
     "@types/inversify": "^2.0.33",
     "@types/reflect-metadata": "^0.1.0",
-    "@types/node-fetch": "^3.0.3"
+    "@types/axios": "^0.14.0"
   }
 }

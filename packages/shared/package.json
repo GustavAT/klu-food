@@ -6,7 +6,8 @@
     "build": "tsc --build",
     "lint": "eslint --config ../../.eslintrc.json ./src/**/*",
     "prettier": "prettier --config ../../.prettierrc --check ./src/**/* ",
-    "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/*"
+    "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/*",
+    "test": "echo No tests configured for @klu-food/shared"
   },
   "devDependencies": {
     "typescript": "^4.4.2",

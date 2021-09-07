@@ -8,8 +8,10 @@
     "packages/api"
   ],
   "scripts": {
-    "lint:all": "yarn workspace @klu-food/shared run lint",
-    "prettier:all": "yarn workspace @klu-food/shared run prettier"
+    "build": "yarn workspaces run build",
+    "lint": "yarn workspaces run lint",
+    "prettier": "yarn workspaces run prettier",
+    "test": "yarn workspaces run test"
   },
   "devDependencies": {
     "typescript": "^4.4.2",

@@ -1,6 +1,6 @@
-import { injectable } from 'inversify';
-import fetch from 'node-fetch';
 import { buildCookieHeader } from './http-util';
+import get from 'axios';
+import { injectable } from 'inversify';
 
 @injectable()
 export class HttpClient {
@@ -11,7 +11,8 @@ export class HttpClient {
    */
   public async get(url: string, cookies?: [string, string][]): Promise<string> {
     const httpHeader = buildCookieHeader(cookies);
+    console.log(httpHeader);
 
-    return fetch(url, { headers: httpHeader }).then((response) => response.text());
+    return get(url, { headers: httpHeader }).then((response) => response.data);
   }
 }
