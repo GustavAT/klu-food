@@ -7,15 +7,16 @@
     "build": "tsc --build",
     "start": "node --experimental-specifier-resolution=node ./dist/index.js",
     "lint": "eslint --config ../../.eslintrc.json ./src/**/*",
-    "prettier": "prettier --config ../../.prettierrc --check ./src/**/* ",
-    "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/*",
+    "prettier": "prettier --config ../../.prettierrc --check ./src/**/* ./spec/**/*",
+    "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/* ./spec/**/*",
     "test": "jest --config ./jest.config.json"
   },
   "dependencies": {
     "@klu-food/shared": "1.0.0",
     "inversify": "^5.1.1",
     "reflect-metadata": "^0.1.13",
-    "axios": "^0.21.4"
+    "axios": "^0.21.4",
+    "log4js": "^6.6.1"
   },
   "devDependencies": {
     "typescript": "^4.4.2",
