@@ -1,4 +1,4 @@
-import { buildCookieHeader } from "../../src/http-client";
+import { buildCookieHeader } from '../../src/http-client';
 
 describe('http-util', () => {
   describe('cookie header', () => {
@@ -11,8 +11,7 @@ describe('http-util', () => {
       const result = buildCookieHeader([[key, value]]);
 
       // then
-      expect(result)
-        .toEqual({ 'cookie': `${key}=${value}`});
+      expect(result).toEqual({ cookie: `${key}=${value}` });
     });
 
     it('should not build the cookie header', () => {
@@ -20,8 +19,7 @@ describe('http-util', () => {
       const result = buildCookieHeader();
 
       // then
-      expect(result)
-        .toBeUndefined();
+      expect(result).toBeUndefined();
     });
   });
 });
