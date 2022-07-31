@@ -1,6 +1,8 @@
-export enum Restaurant {
+enum Restaurant {
   BitsAndBytes,
   Hotspot,
   Mensa,
   UniWirt,
 }
+
+export default Restaurant;

@@ -1,6 +1,9 @@
 import { buildCookieHeader } from './http-util';
 import get from 'axios';
 import { injectable } from 'inversify';
+import log4js from 'log4js';
+
+const LOGGER = log4js.getLogger('http-client');
 
 @injectable()
 export class HttpClient {
@@ -11,7 +14,8 @@ export class HttpClient {
    */
   public async get(url: string, cookies?: [string, string][]): Promise<string> {
     const httpHeader = buildCookieHeader(cookies);
-    console.log(httpHeader);
+
+    LOGGER.info('Fetch page source for %s with cookies %s', url, cookies);
 
     return get(url, { headers: httpHeader }).then((response) => response.data);
   }

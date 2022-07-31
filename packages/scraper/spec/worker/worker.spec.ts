@@ -1,4 +1,5 @@
 import { Worker } from '../../src/worker/worker';
+import { jest } from '@jest/globals';
 
 describe('worker', () => {
   jest.useFakeTimers();
@@ -8,7 +9,7 @@ describe('worker', () => {
 
   beforeEach(() => {
     executor.mockReset();
-    worker = new Worker('worker', 100, executor, () => {});
+    worker = new Worker('worker', 100, executor as unknown as () => Promise<void>, () => {});
   });
 
   afterEach(() => {

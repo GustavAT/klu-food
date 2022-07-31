@@ -1,12 +1,18 @@
 {
   "preset": "ts-jest",
-  "testEnvironment": "node",
+  "testEnvironment": "jest-environment-node",
+  "transform": {
+    "^.+\\.ts$": "ts-jest",
+    "^.+\\.js$": "babel-jest"
+  },
   "setupFiles": [
     "./spec/setup.ts"
   ],
+  "extensionsToTreatAsEsm": [".ts"],
   "globals": {
     "ts-jest": {
-      "tsconfig": "./tsconfig.jest.json"
+      "tsconfig": "./tsconfig.jest.json",
+      "useESM": true
     }
   }
 }

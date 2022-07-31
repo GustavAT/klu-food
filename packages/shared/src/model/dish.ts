@@ -1,5 +1,5 @@
-import { Restaurant } from './restaurant';
-import { Weekday } from './weekday';
+import Restaurant from './restaurant';
+import Weekday from './weekday';
 
 export interface Dish {
   name: string;

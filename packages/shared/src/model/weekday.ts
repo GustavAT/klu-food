@@ -1,4 +1,4 @@
-export enum Weekday {
+enum Weekday {
   Monday,
   Tuesday,
   Wednesday,
@@ -8,3 +8,5 @@ export enum Weekday {
   Sunday,
   All,
 }
+
+export default Weekday;
