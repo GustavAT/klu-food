@@ -7,6 +7,7 @@
   "scripts": {
     "build": "echo Not available for @klu-food/api",
     "lint": "echo Not available for @klu-food/api",
+    "lint:fix": "echo Not availabel for @klu-food/api",
     "prettier": "echo Not available for @klu-food/api",
     "prettier:fix": "echo Not available for @klu-food/api",
     "test": "echo No tests configured for @klu-food/api"

@@ -7,6 +7,7 @@
     "build": "tsc --build",
     "start": "node --experimental-specifier-resolution=node ./dist/index.js",
     "lint": "eslint --config ../../.eslintrc.json ./src/**/*",
+    "lint:fix": "eslint --fix --config ../../.eslintrc.json ./src/**/*",
     "prettier": "prettier --config ../../.prettierrc --check ./src/**/* ./spec/**/*",
     "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/* ./spec/**/*",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.json"

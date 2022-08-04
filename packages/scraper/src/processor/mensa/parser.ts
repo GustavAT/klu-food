@@ -1,5 +1,4 @@
-
-import { Dish, partition } from '@klu-food/shared';
+import { Category, Dish, Restaurant, Weekday, partition } from '@klu-food/shared';
 import { includes, isEmpty, isNil, join, map, split, toLower, trim } from 'lodash-es';
 import { HTMLElement } from 'node-html-parser';
 import log4js from 'log4js';
@@ -14,7 +13,7 @@ export interface MensaDish {
   sideDish: string;
   price: string;
   allergenes: string[];
-  vegan: boolean;
+  vegetarian: boolean;
 }
 
 /**
@@ -34,6 +33,10 @@ const MENU_SOUP = 'suppe';
  * [price] any price tag after the '€' symbol
  */
 const REGEX_MENSA_DISH = /^(.*)\s+\(([\w,\s]*)\).*€\s([\d,]+)$/;
+/**
+ * (Most?) vegetarian mensa dishes contain the word 'vegan' or 'vegetarisch'.
+ */
+const REGEX_VEGETATIRAN_DISH = /vegan|vegetarisch/i;
 
 /**
  * Parse the dish for mensa.
@@ -94,13 +97,14 @@ export const parseDish = (rawEntry: string[]): MensaDish | undefined => {
   }
 
   const allergenes = map(split(alergenesString, ','), trim);
+  const vegetarian = !isNil(mainDish.match(REGEX_VEGETATIRAN_DISH));
 
   return {
     mainDish,
     sideDish,
     allergenes,
     price,
-    vegan: false,
+    vegetarian,
   };
 };
 
@@ -127,6 +131,8 @@ export const queryWeeklyMenu = (root: HTMLElement): Dish[] => {
     .splice(0, 1); // Remove the first "Wochen-Angebote" line
   const groupedEntries = partition(entiesRawList, '*').splice(0, 1); // Remove last group "Opening hours/AAU Teller/take-away info"
 
+  const dishes: Dish[] = [];
+
   for (const rawEntry of groupedEntries) {
     const mensaDish = parseDish(rawEntry);
 
@@ -134,9 +140,18 @@ export const queryWeeklyMenu = (root: HTMLElement): Dish[] => {
       LOGGER.warn('Could not parse menu %s', rawEntry);
       continue;
     }
-  }
 
-  const dishes: Dish[] = [];
+    dishes.push({
+      name: mensaDish.mainDish,
+      sideDish: mensaDish.sideDish,
+      allergens: mensaDish.allergenes,
+      price: mensaDish.price,
+      vegetarian: mensaDish.vegetarian,
+      category: Category.MensaWeekly,
+      restaurant: Restaurant.Mensa,
+      weekday: Weekday.All,
+    });
+  }
 
   return dishes;
 };

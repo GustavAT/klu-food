@@ -10,7 +10,9 @@
   "scripts": {
     "build": "yarn workspaces run build",
     "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
     "prettier": "yarn workspaces run prettier",
+    "prettier:fix": "yarn workspaces run prettier:fix",
     "test": "yarn workspaces run test"
   },
   "devDependencies": {

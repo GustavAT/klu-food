@@ -5,6 +5,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "eslint --config ../../.eslintrc.json ./src/**/*",
+    "lint:fix": "eslint --fix --config ../../.eslintrc.json ./src/**/*",
     "prettier": "prettier --config ../../.prettierrc --check ./src/**/* ./spec/**/*",
     "prettier:fix": "prettier --config ../../.prettierrc --write ./src/**/* ./spec/**/*",
     "test": "jest --config ./jest.config.json"

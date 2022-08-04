@@ -28,6 +28,16 @@
         "next": "return"
       }
     ],
-    "sort-imports": "error"
+    "sort-imports": "error",
+    "comma-dangle": [
+      "error", 
+      {
+        "arrays": "always",
+        "objects": "always",
+        "imports": "always-multiline",
+        "exports": "only-multiline",
+        "functions": "only-multiline"
+      }
+    ]
   }
 }
